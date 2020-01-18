@@ -153,9 +153,9 @@ public class BrandedFoodObjectItems   {
   **/
   private List<String> traces = null;
   
-  @Schema(description = "An array of vitamins that can be found in this item")
+  @Schema(description = "An array of vitamins that are found in this item")
  /**
-   * An array of vitamins that can be found in this item  
+   * An array of vitamins that are found in this item  
   **/
   private List<String> vitamins = null;
   
@@ -670,7 +670,7 @@ public class BrandedFoodObjectItems   {
   }
 
  /**
-   * An array of vitamins that can be found in this item
+   * An array of vitamins that are found in this item
    * @return vitamins
   **/
   @JsonProperty("vitamins")
