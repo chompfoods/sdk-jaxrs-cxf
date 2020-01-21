@@ -58,6 +58,12 @@ public class BrandedFoodObjectNutrientsUsda   {
   **/
   private BigDecimal median = null;
   
+  @Schema(description = "Nutrient rank")
+ /**
+   * Nutrient rank  
+  **/
+  private Integer rank = null;
+  
   @Schema(description = "Number of observations on which the value is based")
  /**
    * Number of observations on which the value is based  
@@ -73,12 +79,6 @@ public class BrandedFoodObjectNutrientsUsda   {
   @Schema(description = "Description of the nutrient source")
  /**
    * Description of the nutrient source  
-  **/
-  private String source = null;
-  
-  @Schema(description = "Description of how the food nutrient value was obtained")
- /**
-   * Description of how the food nutrient value was obtained  
   **/
   private String description = null;
  /**
@@ -208,6 +208,24 @@ public class BrandedFoodObjectNutrientsUsda   {
   }
 
  /**
+   * Nutrient rank
+   * @return rank
+  **/
+  @JsonProperty("rank")
+  public Integer getRank() {
+    return rank;
+  }
+
+  public void setRank(Integer rank) {
+    this.rank = rank;
+  }
+
+  public BrandedFoodObjectNutrientsUsda rank(Integer rank) {
+    this.rank = rank;
+    return this;
+  }
+
+ /**
    * Number of observations on which the value is based
    * @return dataPoints
   **/
@@ -245,24 +263,6 @@ public class BrandedFoodObjectNutrientsUsda   {
 
  /**
    * Description of the nutrient source
-   * @return source
-  **/
-  @JsonProperty("source")
-  public String getSource() {
-    return source;
-  }
-
-  public void setSource(String source) {
-    this.source = source;
-  }
-
-  public BrandedFoodObjectNutrientsUsda source(String source) {
-    this.source = source;
-    return this;
-  }
-
- /**
-   * Description of how the food nutrient value was obtained
    * @return description
   **/
   @JsonProperty("description")
@@ -292,9 +292,9 @@ public class BrandedFoodObjectNutrientsUsda   {
     sb.append("    min: ").append(toIndentedString(min)).append("\n");
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
     sb.append("    median: ").append(toIndentedString(median)).append("\n");
+    sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
     sb.append("    dataPoints: ").append(toIndentedString(dataPoints)).append("\n");
     sb.append("    footnote: ").append(toIndentedString(footnote)).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();

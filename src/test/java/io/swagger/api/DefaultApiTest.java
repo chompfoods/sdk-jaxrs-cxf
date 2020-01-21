@@ -162,12 +162,12 @@ public class DefaultApiTest {
      *          if the Api call fails
      */
     @Test
-    public void ingredientSearchPhpGetTest() {
+    public void foodIngredientSearchPhpGetTest() {
         Integer find = null;
         Boolean list = null;
         Boolean raw = null;
         Integer limit = null;
-        //IngredientObject response = api.ingredientSearchPhpGet(find, list, raw, limit);
+        //IngredientObject response = api.foodIngredientSearchPhpGet(find, list, raw, limit);
         //assertNotNull(response);
         // TODO: test validations
         

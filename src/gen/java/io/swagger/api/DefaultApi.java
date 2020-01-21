@@ -111,7 +111,7 @@ public interface DefaultApi  {
      *
      */
     @GET
-    @Path("/ingredient/search.php")
+    @Path("/food/ingredient/search.php")
     @Produces({ "application/json" })
     @Operation(summary = "Get raw/generic food ingredient item(s)", tags={  })
     @ApiResponses(value = { 
@@ -121,5 +121,5 @@ public interface DefaultApi  {
         @ApiResponse(responseCode = "403", description = "__Forbidden__ - Disallowed entity."),
         @ApiResponse(responseCode = "404", description = "__Not found__ - No food items exist that match your query parameters."),
         @ApiResponse(responseCode = "500", description = "__Server error__ - Internal server error, request failed, or base error. _[Contact us](https://chompthis.com/api/ticket-new.php) if you see this._") })
-    public IngredientObject ingredientSearchPhpGet(@QueryParam("find")Integer find, @QueryParam("list")Boolean list, @QueryParam("raw")Boolean raw, @QueryParam("limit")Integer limit);
+    public IngredientObject foodIngredientSearchPhpGet(@QueryParam("find")Integer find, @QueryParam("list")Boolean list, @QueryParam("raw")Boolean raw, @QueryParam("limit")Integer limit);
 }
