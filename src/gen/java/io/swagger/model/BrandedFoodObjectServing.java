@@ -20,17 +20,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 @Schema(description="An object containing serving information for this item")
 public class BrandedFoodObjectServing   {
   
-  @Schema(description = "Serving size")
+  @Schema(description = "Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)")
  /**
-   * Serving size  
+   * Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)  
   **/
-  private Integer size = null;
-  
-  @Schema(description = "Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)")
- /**
-   * Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)  
-  **/
-  private String measurementUnit = null;
+  private String size = null;
   
   @Schema(description = "Serving size description")
  /**
@@ -44,38 +38,20 @@ public class BrandedFoodObjectServing   {
   **/
   private Integer total = null;
  /**
-   * Serving size
+   * Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)
    * @return size
   **/
   @JsonProperty("size")
-  public Integer getSize() {
+  public String getSize() {
     return size;
   }
 
-  public void setSize(Integer size) {
+  public void setSize(String size) {
     this.size = size;
   }
 
-  public BrandedFoodObjectServing size(Integer size) {
+  public BrandedFoodObjectServing size(String size) {
     this.size = size;
-    return this;
-  }
-
- /**
-   * Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)
-   * @return measurementUnit
-  **/
-  @JsonProperty("measurement_unit")
-  public String getMeasurementUnit() {
-    return measurementUnit;
-  }
-
-  public void setMeasurementUnit(String measurementUnit) {
-    this.measurementUnit = measurementUnit;
-  }
-
-  public BrandedFoodObjectServing measurementUnit(String measurementUnit) {
-    this.measurementUnit = measurementUnit;
     return this;
   }
 
@@ -122,7 +98,6 @@ public class BrandedFoodObjectServing   {
     sb.append("class BrandedFoodObjectServing {\n");
     
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    measurementUnit: ").append(toIndentedString(measurementUnit)).append("\n");
     sb.append("    sizeFulltext: ").append(toIndentedString(sizeFulltext)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("}");
