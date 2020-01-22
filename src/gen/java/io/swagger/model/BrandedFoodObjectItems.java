@@ -5,6 +5,7 @@ import io.swagger.model.BrandedFoodObjectComponents;
 import io.swagger.model.BrandedFoodObjectCountryDetails;
 import io.swagger.model.BrandedFoodObjectDietFlags;
 import io.swagger.model.BrandedFoodObjectDietLabels;
+import io.swagger.model.BrandedFoodObjectIngredients;
 import io.swagger.model.BrandedFoodObjectNutrients;
 import io.swagger.model.BrandedFoodObjectPackage;
 import io.swagger.model.BrandedFoodObjectPackagingPhotos;
@@ -51,11 +52,8 @@ public class BrandedFoodObjectItems   {
   **/
   private String brand = null;
   
-  @Schema(description = "Ingredients in order of highest value to least")
- /**
-   * Ingredients in order of highest value to least  
-  **/
-  private String ingredients = null;
+  @Schema(description = "")
+  private BrandedFoodObjectIngredients ingredients = null;
   
   @Schema(description = "")
   private BrandedFoodObjectPackage _package = null;
@@ -237,19 +235,19 @@ public class BrandedFoodObjectItems   {
   }
 
  /**
-   * Ingredients in order of highest value to least
+   * Get ingredients
    * @return ingredients
   **/
   @JsonProperty("ingredients")
-  public String getIngredients() {
+  public BrandedFoodObjectIngredients getIngredients() {
     return ingredients;
   }
 
-  public void setIngredients(String ingredients) {
+  public void setIngredients(BrandedFoodObjectIngredients ingredients) {
     this.ingredients = ingredients;
   }
 
-  public BrandedFoodObjectItems ingredients(String ingredients) {
+  public BrandedFoodObjectItems ingredients(BrandedFoodObjectIngredients ingredients) {
     this.ingredients = ingredients;
     return this;
   }
