@@ -1,5 +1,7 @@
 package io.swagger.model;
 
+import io.swagger.model.BrandedFoodObjectServingChomp;
+import io.swagger.model.BrandedFoodObjectServingUsda;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -20,74 +22,44 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 @Schema(description="An object containing serving information for this item")
 public class BrandedFoodObjectServing   {
   
-  @Schema(description = "Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)")
- /**
-   * Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)  
-  **/
-  private String size = null;
+  @Schema(description = "")
+  private BrandedFoodObjectServingChomp chomp = null;
   
-  @Schema(description = "Serving size description")
+  @Schema(description = "")
+  private BrandedFoodObjectServingUsda usda = null;
  /**
-   * Serving size description  
+   * Get chomp
+   * @return chomp
   **/
-  private String sizeFulltext = null;
-  
-  @Schema(description = "Total servings")
- /**
-   * Total servings  
-  **/
-  private Integer total = null;
- /**
-   * Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)
-   * @return size
-  **/
-  @JsonProperty("size")
-  public String getSize() {
-    return size;
+  @JsonProperty("chomp")
+  public BrandedFoodObjectServingChomp getChomp() {
+    return chomp;
   }
 
-  public void setSize(String size) {
-    this.size = size;
+  public void setChomp(BrandedFoodObjectServingChomp chomp) {
+    this.chomp = chomp;
   }
 
-  public BrandedFoodObjectServing size(String size) {
-    this.size = size;
+  public BrandedFoodObjectServing chomp(BrandedFoodObjectServingChomp chomp) {
+    this.chomp = chomp;
     return this;
   }
 
  /**
-   * Serving size description
-   * @return sizeFulltext
+   * Get usda
+   * @return usda
   **/
-  @JsonProperty("size_fulltext")
-  public String getSizeFulltext() {
-    return sizeFulltext;
+  @JsonProperty("usda")
+  public BrandedFoodObjectServingUsda getUsda() {
+    return usda;
   }
 
-  public void setSizeFulltext(String sizeFulltext) {
-    this.sizeFulltext = sizeFulltext;
+  public void setUsda(BrandedFoodObjectServingUsda usda) {
+    this.usda = usda;
   }
 
-  public BrandedFoodObjectServing sizeFulltext(String sizeFulltext) {
-    this.sizeFulltext = sizeFulltext;
-    return this;
-  }
-
- /**
-   * Total servings
-   * @return total
-  **/
-  @JsonProperty("total")
-  public Integer getTotal() {
-    return total;
-  }
-
-  public void setTotal(Integer total) {
-    this.total = total;
-  }
-
-  public BrandedFoodObjectServing total(Integer total) {
-    this.total = total;
+  public BrandedFoodObjectServing usda(BrandedFoodObjectServingUsda usda) {
+    this.usda = usda;
     return this;
   }
 
@@ -97,9 +69,8 @@ public class BrandedFoodObjectServing   {
     StringBuilder sb = new StringBuilder();
     sb.append("class BrandedFoodObjectServing {\n");
     
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    sizeFulltext: ").append(toIndentedString(sizeFulltext)).append("\n");
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    chomp: ").append(toIndentedString(chomp)).append("\n");
+    sb.append("    usda: ").append(toIndentedString(usda)).append("\n");
     sb.append("}");
     return sb.toString();
   }

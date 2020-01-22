@@ -157,11 +157,11 @@ public class BrandedFoodObjectItems   {
   **/
   private List<String> vitamins = null;
   
-  @Schema(description = "Other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")")
+  @Schema(description = "An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" a common name may be \"Chicken enchilada\")")
  /**
-   * Other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")  
+   * An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" a common name may be \"Chicken enchilada\")  
   **/
-  private String commonName = null;
+  private List<String> commonNames = null;
   
   @Schema(description = "A description of this item")
  /**
@@ -691,20 +691,25 @@ public class BrandedFoodObjectItems   {
   }
 
  /**
-   * Other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)
-   * @return commonName
+   * An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; a common name may be \&quot;Chicken enchilada\&quot;)
+   * @return commonNames
   **/
-  @JsonProperty("common_name")
-  public String getCommonName() {
-    return commonName;
+  @JsonProperty("common_names")
+  public List<String> getCommonNames() {
+    return commonNames;
   }
 
-  public void setCommonName(String commonName) {
-    this.commonName = commonName;
+  public void setCommonNames(List<String> commonNames) {
+    this.commonNames = commonNames;
   }
 
-  public BrandedFoodObjectItems commonName(String commonName) {
-    this.commonName = commonName;
+  public BrandedFoodObjectItems commonNames(List<String> commonNames) {
+    this.commonNames = commonNames;
+    return this;
+  }
+
+  public BrandedFoodObjectItems addCommonNamesItem(String commonNamesItem) {
+    this.commonNames.add(commonNamesItem);
     return this;
   }
 
@@ -798,7 +803,7 @@ public class BrandedFoodObjectItems   {
     sb.append("    minerals: ").append(toIndentedString(minerals)).append("\n");
     sb.append("    traces: ").append(toIndentedString(traces)).append("\n");
     sb.append("    vitamins: ").append(toIndentedString(vitamins)).append("\n");
-    sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
+    sb.append("    commonNames: ").append(toIndentedString(commonNames)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    footnote: ").append(toIndentedString(footnote)).append("\n");
