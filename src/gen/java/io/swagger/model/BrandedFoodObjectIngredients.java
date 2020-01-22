@@ -26,9 +26,9 @@ public class BrandedFoodObjectIngredients   {
   **/
   private String chomp = null;
   
-  @Schema(description = "This branded food item's ingredients according to the USDA")
+  @Schema(description = "This branded food item's ingredients, according to the USDA")
  /**
-   * This branded food item's ingredients according to the USDA  
+   * This branded food item's ingredients, according to the USDA  
   **/
   private String usda = null;
  /**
@@ -50,7 +50,7 @@ public class BrandedFoodObjectIngredients   {
   }
 
  /**
-   * This branded food item&#x27;s ingredients according to the USDA
+   * This branded food item&#x27;s ingredients, according to the USDA
    * @return usda
   **/
   @JsonProperty("usda")
