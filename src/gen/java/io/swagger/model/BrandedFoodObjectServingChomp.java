@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 /**
-  * Serving information from as seen on ChompThis.com
+  * Serving information from Chomp's internal database
  **/
-@Schema(description="Serving information from as seen on ChompThis.com")
+@Schema(description="Serving information from Chomp's internal database")
 public class BrandedFoodObjectServingChomp   {
   
   @Schema(description = "Serving size with measurement unit (e.g. if measure is 3 tsp, the unit is tsp)")

@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 @Schema(description="An object containing this item's ingredients in order of highest value to least")
 public class BrandedFoodObjectIngredients   {
   
-  @Schema(description = "This item's ingredients as seen on ChompThis.com")
+  @Schema(description = "Ingredients for this item from Chomp's internal database")
  /**
-   * This item's ingredients as seen on ChompThis.com  
+   * Ingredients for this item from Chomp's internal database  
   **/
   private String chomp = null;
   
@@ -32,7 +32,7 @@ public class BrandedFoodObjectIngredients   {
   **/
   private String usda = null;
  /**
-   * This item&#x27;s ingredients as seen on ChompThis.com
+   * Ingredients for this item from Chomp&#x27;s internal database
    * @return chomp
   **/
   @JsonProperty("chomp")
