@@ -1,7 +1,7 @@
 package io.swagger.model;
 
-import io.swagger.model.BrandedFoodObjectCalorieConversionFactor;
 import io.swagger.model.BrandedFoodObjectDietLabels;
+import io.swagger.model.IngredientObjectCalorieConversionFactor;
 import io.swagger.model.IngredientObjectComponents;
 import io.swagger.model.IngredientObjectNutrients;
 import io.swagger.model.IngredientObjectPortions;
@@ -41,7 +41,7 @@ public class IngredientObjectItems   {
   private IngredientObjectNutrients nutrients = null;
   
   @Schema(description = "")
-  private BrandedFoodObjectCalorieConversionFactor calorieConversionFactor = null;
+  private IngredientObjectCalorieConversionFactor calorieConversionFactor = null;
   
   @Schema(description = "The multiplication factor used to calculate protein from nitrogen")
  /**
@@ -145,15 +145,15 @@ public class IngredientObjectItems   {
    * @return calorieConversionFactor
   **/
   @JsonProperty("calorie_conversion_factor")
-  public BrandedFoodObjectCalorieConversionFactor getCalorieConversionFactor() {
+  public IngredientObjectCalorieConversionFactor getCalorieConversionFactor() {
     return calorieConversionFactor;
   }
 
-  public void setCalorieConversionFactor(BrandedFoodObjectCalorieConversionFactor calorieConversionFactor) {
+  public void setCalorieConversionFactor(IngredientObjectCalorieConversionFactor calorieConversionFactor) {
     this.calorieConversionFactor = calorieConversionFactor;
   }
 
-  public IngredientObjectItems calorieConversionFactor(BrandedFoodObjectCalorieConversionFactor calorieConversionFactor) {
+  public IngredientObjectItems calorieConversionFactor(IngredientObjectCalorieConversionFactor calorieConversionFactor) {
     this.calorieConversionFactor = calorieConversionFactor;
     return this;
   }

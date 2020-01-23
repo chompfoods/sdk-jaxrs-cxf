@@ -1,6 +1,5 @@
 package io.swagger.model;
 
-import io.swagger.model.BrandedFoodObjectCalorieConversionFactor;
 import io.swagger.model.BrandedFoodObjectCountryDetails;
 import io.swagger.model.BrandedFoodObjectDietFlags;
 import io.swagger.model.BrandedFoodObjectDietLabels;
@@ -10,7 +9,6 @@ import io.swagger.model.BrandedFoodObjectPackage;
 import io.swagger.model.BrandedFoodObjectPackagingPhotos;
 import io.swagger.model.BrandedFoodObjectServing;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,15 +62,6 @@ public class BrandedFoodObjectItems   {
   
   @Schema(description = "")
   private BrandedFoodObjectNutrients nutrients = null;
-  
-  @Schema(description = "")
-  private BrandedFoodObjectCalorieConversionFactor calorieConversionFactor = null;
-  
-  @Schema(description = "The multiplication factor used to calculate protein from nitrogen")
- /**
-   * The multiplication factor used to calculate protein from nitrogen  
-  **/
-  private BigDecimal proteinConversionFactor = null;
   
   @Schema(description = "")
   private BrandedFoodObjectDietLabels dietLabels = null;
@@ -300,42 +289,6 @@ public class BrandedFoodObjectItems   {
 
   public BrandedFoodObjectItems nutrients(BrandedFoodObjectNutrients nutrients) {
     this.nutrients = nutrients;
-    return this;
-  }
-
- /**
-   * Get calorieConversionFactor
-   * @return calorieConversionFactor
-  **/
-  @JsonProperty("calorie_conversion_factor")
-  public BrandedFoodObjectCalorieConversionFactor getCalorieConversionFactor() {
-    return calorieConversionFactor;
-  }
-
-  public void setCalorieConversionFactor(BrandedFoodObjectCalorieConversionFactor calorieConversionFactor) {
-    this.calorieConversionFactor = calorieConversionFactor;
-  }
-
-  public BrandedFoodObjectItems calorieConversionFactor(BrandedFoodObjectCalorieConversionFactor calorieConversionFactor) {
-    this.calorieConversionFactor = calorieConversionFactor;
-    return this;
-  }
-
- /**
-   * The multiplication factor used to calculate protein from nitrogen
-   * @return proteinConversionFactor
-  **/
-  @JsonProperty("protein_conversion_factor")
-  public BigDecimal getProteinConversionFactor() {
-    return proteinConversionFactor;
-  }
-
-  public void setProteinConversionFactor(BigDecimal proteinConversionFactor) {
-    this.proteinConversionFactor = proteinConversionFactor;
-  }
-
-  public BrandedFoodObjectItems proteinConversionFactor(BigDecimal proteinConversionFactor) {
-    this.proteinConversionFactor = proteinConversionFactor;
     return this;
   }
 
@@ -673,8 +626,6 @@ public class BrandedFoodObjectItems   {
     sb.append("    serving: ").append(toIndentedString(serving)).append("\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("    nutrients: ").append(toIndentedString(nutrients)).append("\n");
-    sb.append("    calorieConversionFactor: ").append(toIndentedString(calorieConversionFactor)).append("\n");
-    sb.append("    proteinConversionFactor: ").append(toIndentedString(proteinConversionFactor)).append("\n");
     sb.append("    dietLabels: ").append(toIndentedString(dietLabels)).append("\n");
     sb.append("    dietFlags: ").append(toIndentedString(dietFlags)).append("\n");
     sb.append("    packagingPhotos: ").append(toIndentedString(packagingPhotos)).append("\n");
