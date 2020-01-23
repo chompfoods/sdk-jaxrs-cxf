@@ -1,10 +1,10 @@
 package io.swagger.model;
 
 import io.swagger.model.BrandedFoodObjectCalorieConversionFactor;
-import io.swagger.model.BrandedFoodObjectComponents;
 import io.swagger.model.BrandedFoodObjectDietLabels;
-import io.swagger.model.BrandedFoodObjectPortions;
+import io.swagger.model.IngredientObjectComponents;
 import io.swagger.model.IngredientObjectNutrients;
+import io.swagger.model.IngredientObjectPortions;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -56,13 +56,13 @@ public class IngredientObjectItems   {
  /**
    * An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)  
   **/
-  private List<BrandedFoodObjectComponents> components = null;
+  private List<IngredientObjectComponents> components = null;
   
   @Schema(description = "An array of objects containing information on discrete amounts of a food found in this item")
  /**
    * An array of objects containing information on discrete amounts of a food found in this item  
   **/
-  private List<BrandedFoodObjectPortions> portions = null;
+  private List<IngredientObjectPortions> portions = null;
   
   @Schema(description = "Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")")
  /**
@@ -199,20 +199,20 @@ public class IngredientObjectItems   {
    * @return components
   **/
   @JsonProperty("components")
-  public List<BrandedFoodObjectComponents> getComponents() {
+  public List<IngredientObjectComponents> getComponents() {
     return components;
   }
 
-  public void setComponents(List<BrandedFoodObjectComponents> components) {
+  public void setComponents(List<IngredientObjectComponents> components) {
     this.components = components;
   }
 
-  public IngredientObjectItems components(List<BrandedFoodObjectComponents> components) {
+  public IngredientObjectItems components(List<IngredientObjectComponents> components) {
     this.components = components;
     return this;
   }
 
-  public IngredientObjectItems addComponentsItem(BrandedFoodObjectComponents componentsItem) {
+  public IngredientObjectItems addComponentsItem(IngredientObjectComponents componentsItem) {
     this.components.add(componentsItem);
     return this;
   }
@@ -222,20 +222,20 @@ public class IngredientObjectItems   {
    * @return portions
   **/
   @JsonProperty("portions")
-  public List<BrandedFoodObjectPortions> getPortions() {
+  public List<IngredientObjectPortions> getPortions() {
     return portions;
   }
 
-  public void setPortions(List<BrandedFoodObjectPortions> portions) {
+  public void setPortions(List<IngredientObjectPortions> portions) {
     this.portions = portions;
   }
 
-  public IngredientObjectItems portions(List<BrandedFoodObjectPortions> portions) {
+  public IngredientObjectItems portions(List<IngredientObjectPortions> portions) {
     this.portions = portions;
     return this;
   }
 
-  public IngredientObjectItems addPortionsItem(BrandedFoodObjectPortions portionsItem) {
+  public IngredientObjectItems addPortionsItem(IngredientObjectPortions portionsItem) {
     this.portions.add(portionsItem);
     return this;
   }

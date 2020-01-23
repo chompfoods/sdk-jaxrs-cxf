@@ -1,7 +1,6 @@
 package io.swagger.model;
 
 import io.swagger.model.BrandedFoodObjectCalorieConversionFactor;
-import io.swagger.model.BrandedFoodObjectComponents;
 import io.swagger.model.BrandedFoodObjectCountryDetails;
 import io.swagger.model.BrandedFoodObjectDietFlags;
 import io.swagger.model.BrandedFoodObjectDietLabels;
@@ -9,7 +8,6 @@ import io.swagger.model.BrandedFoodObjectIngredients;
 import io.swagger.model.BrandedFoodObjectNutrients;
 import io.swagger.model.BrandedFoodObjectPackage;
 import io.swagger.model.BrandedFoodObjectPackagingPhotos;
-import io.swagger.model.BrandedFoodObjectPortions;
 import io.swagger.model.BrandedFoodObjectServing;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.math.BigDecimal;
@@ -87,18 +85,6 @@ public class BrandedFoodObjectItems   {
   
   @Schema(description = "")
   private BrandedFoodObjectPackagingPhotos packagingPhotos = null;
-  
-  @Schema(description = "An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)")
- /**
-   * An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)  
-  **/
-  private List<BrandedFoodObjectComponents> components = null;
-  
-  @Schema(description = "An array of objects containing information on discrete amounts of a food found in this item")
- /**
-   * An array of objects containing information on discrete amounts of a food found in this item  
-  **/
-  private List<BrandedFoodObjectPortions> portions = null;
   
   @Schema(description = "An array of ingredients in this item that may cause allergic reactions in people")
  /**
@@ -419,52 +405,6 @@ public class BrandedFoodObjectItems   {
   }
 
  /**
-   * An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)
-   * @return components
-  **/
-  @JsonProperty("components")
-  public List<BrandedFoodObjectComponents> getComponents() {
-    return components;
-  }
-
-  public void setComponents(List<BrandedFoodObjectComponents> components) {
-    this.components = components;
-  }
-
-  public BrandedFoodObjectItems components(List<BrandedFoodObjectComponents> components) {
-    this.components = components;
-    return this;
-  }
-
-  public BrandedFoodObjectItems addComponentsItem(BrandedFoodObjectComponents componentsItem) {
-    this.components.add(componentsItem);
-    return this;
-  }
-
- /**
-   * An array of objects containing information on discrete amounts of a food found in this item
-   * @return portions
-  **/
-  @JsonProperty("portions")
-  public List<BrandedFoodObjectPortions> getPortions() {
-    return portions;
-  }
-
-  public void setPortions(List<BrandedFoodObjectPortions> portions) {
-    this.portions = portions;
-  }
-
-  public BrandedFoodObjectItems portions(List<BrandedFoodObjectPortions> portions) {
-    this.portions = portions;
-    return this;
-  }
-
-  public BrandedFoodObjectItems addPortionsItem(BrandedFoodObjectPortions portionsItem) {
-    this.portions.add(portionsItem);
-    return this;
-  }
-
- /**
    * An array of ingredients in this item that may cause allergic reactions in people
    * @return allergens
   **/
@@ -762,8 +702,6 @@ public class BrandedFoodObjectItems   {
     sb.append("    dietLabels: ").append(toIndentedString(dietLabels)).append("\n");
     sb.append("    dietFlags: ").append(toIndentedString(dietFlags)).append("\n");
     sb.append("    packagingPhotos: ").append(toIndentedString(packagingPhotos)).append("\n");
-    sb.append("    components: ").append(toIndentedString(components)).append("\n");
-    sb.append("    portions: ").append(toIndentedString(portions)).append("\n");
     sb.append("    allergens: ").append(toIndentedString(allergens)).append("\n");
     sb.append("    brandList: ").append(toIndentedString(brandList)).append("\n");
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
