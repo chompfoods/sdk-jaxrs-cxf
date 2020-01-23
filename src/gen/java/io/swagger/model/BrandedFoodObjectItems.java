@@ -154,12 +154,6 @@ public class BrandedFoodObjectItems   {
    * An array of keywords that can be used to describe this item  
   **/
   private List<String> keywords = null;
-  
-  @Schema(description = "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.")
- /**
-   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.  
-  **/
-  private String footnote = null;
  /**
    * EAN/UPC barcode
    * @return barcode
@@ -665,24 +659,6 @@ public class BrandedFoodObjectItems   {
     return this;
   }
 
- /**
-   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.
-   * @return footnote
-  **/
-  @JsonProperty("footnote")
-  public String getFootnote() {
-    return footnote;
-  }
-
-  public void setFootnote(String footnote) {
-    this.footnote = footnote;
-  }
-
-  public BrandedFoodObjectItems footnote(String footnote) {
-    this.footnote = footnote;
-    return this;
-  }
-
 
   @Override
   public String toString() {
@@ -714,7 +690,6 @@ public class BrandedFoodObjectItems   {
     sb.append("    vitamins: ").append(toIndentedString(vitamins)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
-    sb.append("    footnote: ").append(toIndentedString(footnote)).append("\n");
     sb.append("}");
     return sb.toString();
   }
