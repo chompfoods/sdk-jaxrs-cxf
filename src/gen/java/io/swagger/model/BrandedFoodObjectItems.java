@@ -157,12 +157,6 @@ public class BrandedFoodObjectItems   {
   **/
   private List<String> vitamins = null;
   
-  @Schema(description = "An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" a common name may be \"Chicken enchilada\")")
- /**
-   * An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" a common name may be \"Chicken enchilada\")  
-  **/
-  private List<String> commonNames = null;
-  
   @Schema(description = "A description of this item")
  /**
    * A description of this item  
@@ -691,29 +685,6 @@ public class BrandedFoodObjectItems   {
   }
 
  /**
-   * An array containing other names commonly associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; a common name may be \&quot;Chicken enchilada\&quot;)
-   * @return commonNames
-  **/
-  @JsonProperty("common_names")
-  public List<String> getCommonNames() {
-    return commonNames;
-  }
-
-  public void setCommonNames(List<String> commonNames) {
-    this.commonNames = commonNames;
-  }
-
-  public BrandedFoodObjectItems commonNames(List<String> commonNames) {
-    this.commonNames = commonNames;
-    return this;
-  }
-
-  public BrandedFoodObjectItems addCommonNamesItem(String commonNamesItem) {
-    this.commonNames.add(commonNamesItem);
-    return this;
-  }
-
- /**
    * A description of this item
    * @return description
   **/
@@ -803,7 +774,6 @@ public class BrandedFoodObjectItems   {
     sb.append("    minerals: ").append(toIndentedString(minerals)).append("\n");
     sb.append("    traces: ").append(toIndentedString(traces)).append("\n");
     sb.append("    vitamins: ").append(toIndentedString(vitamins)).append("\n");
-    sb.append("    commonNames: ").append(toIndentedString(commonNames)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
     sb.append("    footnote: ").append(toIndentedString(footnote)).append("\n");
