@@ -48,25 +48,6 @@ public interface DefaultApi  {
     public BrandedFoodObject foodBrandedBarcodePhpGet(@QueryParam("code")String code);
 
     /**
-     * Get a branded food item using an ID number
-     *
-     * ## Get data for a branded food using Chomp&#x27;s internal ID number.  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/id.php?api_key&#x3D;API_KEY&amp;id&#x3D;ID&#x60;&#x60;&#x60;  **Tips**   * Find a food&#x27;s ID by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.   * Alternatively, set the \&quot;source\&quot; parameter to \&quot;USDA\&quot; and use the food&#x27;s FDC ID. 
-     *
-     */
-    @GET
-    @Path("/food/branded/id.php")
-    @Produces({ "application/json" })
-    @Operation(summary = "Get a branded food item using an ID number", tags={  })
-    @ApiResponses(value = { 
-        @ApiResponse(responseCode = "200", description = "**Valid** - Will return an object containing any matching foods.  ", content = @Content(schema = @Schema(implementation = BrandedFoodObject.class))),
-        @ApiResponse(responseCode = "400", description = "**Validation error** - Invalid parameters or request. "),
-        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
-        @ApiResponse(responseCode = "403", description = "**Forbidden** - Disallowed entity. "),
-        @ApiResponse(responseCode = "404", description = "**Not found** - No food items exist that match your query parameters. "),
-        @ApiResponse(responseCode = "500", description = "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* ") })
-    public BrandedFoodObject foodBrandedIdPhpGet(@QueryParam("id")Integer id, @QueryParam("source")String source);
-
-    /**
      * Get a branded food item by name
      *
      * ## Search for branded food items by name.  **Example** &gt; &#x60;&#x60;&#x60;https://chompthis.com/api/v2/food/branded/name.php?api_key&#x3D;API_KEY&amp;name&#x3D;NAME&#x60;&#x60;&#x60;  **Tips**   * Get started by using our **[food lookup tool](https://chompthis.com/api/lookup.php)**.  &gt; This API endpoint is only available to Standard and Premium API subscribers. Please consider upgrading your subscription if you are subscribed to the Limited plan. **[Read this](https://desk.zoho.com/portal/chompthis/kb/articles/can-i-upgrade-downgrade-my-subscription)** if you aren&#x27;t sure how to upgrade your subscription. 

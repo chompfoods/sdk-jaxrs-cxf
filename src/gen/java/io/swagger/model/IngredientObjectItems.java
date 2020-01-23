@@ -37,8 +37,11 @@ public class IngredientObjectItems   {
   @Schema(description = "")
   private List<String> categories = null;
   
-  @Schema(description = "")
-  private IngredientObjectNutrients nutrients = null;
+  @Schema(description = "An array containing nutrient informatio objects for this food item")
+ /**
+   * An array containing nutrient informatio objects for this food item  
+  **/
+  private List<IngredientObjectNutrients> nutrients = null;
   
   @Schema(description = "")
   private IngredientObjectCalorieConversionFactor calorieConversionFactor = null;
@@ -123,20 +126,25 @@ public class IngredientObjectItems   {
   }
 
  /**
-   * Get nutrients
+   * An array containing nutrient informatio objects for this food item
    * @return nutrients
   **/
   @JsonProperty("nutrients")
-  public IngredientObjectNutrients getNutrients() {
+  public List<IngredientObjectNutrients> getNutrients() {
     return nutrients;
   }
 
-  public void setNutrients(IngredientObjectNutrients nutrients) {
+  public void setNutrients(List<IngredientObjectNutrients> nutrients) {
     this.nutrients = nutrients;
   }
 
-  public IngredientObjectItems nutrients(IngredientObjectNutrients nutrients) {
+  public IngredientObjectItems nutrients(List<IngredientObjectNutrients> nutrients) {
     this.nutrients = nutrients;
+    return this;
+  }
+
+  public IngredientObjectItems addNutrientsItem(IngredientObjectNutrients nutrientsItem) {
+    this.nutrients.add(nutrientsItem);
     return this;
   }
 
