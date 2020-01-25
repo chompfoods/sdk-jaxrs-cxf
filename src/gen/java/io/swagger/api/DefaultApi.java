@@ -41,7 +41,7 @@ public interface DefaultApi  {
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "200", description = "**Valid** - Will return an object containing any matching foods.  ", content = @Content(schema = @Schema(implementation = BrandedFoodObject.class))),
         @ApiResponse(responseCode = "400", description = "**Validation error** - Invalid parameters or request. "),
-        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
+        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
         @ApiResponse(responseCode = "404", description = "**Not found** - No food items were found. "),
         @ApiResponse(responseCode = "500", description = "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* ") })
     public BrandedFoodObject foodBrandedBarcodePhpGet(@QueryParam("code")String code);
@@ -59,7 +59,7 @@ public interface DefaultApi  {
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "200", description = "**Valid** - Will return an object containing any matching foods.  ", content = @Content(schema = @Schema(implementation = BrandedFoodObject.class))),
         @ApiResponse(responseCode = "400", description = "**Validation error** - Invalid parameters or request. "),
-        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
+        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
         @ApiResponse(responseCode = "404", description = "**Not found** - No food items were found. "),
         @ApiResponse(responseCode = "500", description = "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* ") })
     public BrandedFoodObject foodBrandedNamePhpGet(@QueryParam("name")String name, @QueryParam("limit")Integer limit, @QueryParam("page")Integer page);
@@ -77,7 +77,7 @@ public interface DefaultApi  {
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "200", description = "**Valid** - Will return an object containing any matching foods.  ", content = @Content(schema = @Schema(implementation = BrandedFoodObject.class))),
         @ApiResponse(responseCode = "400", description = "**Validation error** - Invalid parameters or request. "),
-        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
+        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
         @ApiResponse(responseCode = "404", description = "**Not found** - No food items were found. "),
         @ApiResponse(responseCode = "500", description = "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* ") })
     public BrandedFoodObject foodBrandedSearchPhpGet(@QueryParam("allergen")String allergen, @QueryParam("brand")String brand, @QueryParam("category")String category, @QueryParam("country")String country, @QueryParam("diet")String diet, @QueryParam("ingredient")String ingredient, @QueryParam("keyword")String keyword, @QueryParam("mineral")String mineral, @QueryParam("nutrient")String nutrient, @QueryParam("palm_oil")String palmOil, @QueryParam("trace")String trace, @QueryParam("vitamin")String vitamin, @QueryParam("limit")Integer limit, @QueryParam("page")Integer page);
@@ -95,7 +95,7 @@ public interface DefaultApi  {
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "200", description = "**Valid** - Will return an object containing any matching ingredient foods.  ", content = @Content(schema = @Schema(implementation = IngredientObject.class))),
         @ApiResponse(responseCode = "400", description = "**Validation error** - Invalid parameters or request. "),
-        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
+        @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
         @ApiResponse(responseCode = "404", description = "**Not found** - No food items were found. "),
         @ApiResponse(responseCode = "500", description = "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* ") })
     public IngredientObject foodIngredientSearchPhpGet(@QueryParam("find")Integer find, @QueryParam("list")Boolean list, @QueryParam("raw")Boolean raw, @QueryParam("limit")Integer limit);
