@@ -146,7 +146,7 @@ public class DefaultApiTest {
      */
     @Test
     public void foodIngredientSearchPhpGetTest() {
-        Integer find = null;
+        String find = null;
         Boolean raw = null;
         Integer limit = null;
         //IngredientObject response = api.foodIngredientSearchPhpGet(find, raw, limit);

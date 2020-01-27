@@ -98,5 +98,5 @@ public interface DefaultApi  {
         @ApiResponse(responseCode = "401", description = "**Unauthorized** - Invalid API key, unauthorized access, or usage limits exceeded. ***[More information &raquo;](https://desk.zoho.com/portal/chompthis/kb/articles/what-is-a-rate-limit)*** "),
         @ApiResponse(responseCode = "404", description = "**Not found** - No food items were found. "),
         @ApiResponse(responseCode = "500", description = "**Server error** - Internal server error, request failed, or base error. *Please **[contact us](https://chompthis.com/api/ticket-new.php)** if you see this.* ") })
-    public IngredientObject foodIngredientSearchPhpGet(@QueryParam("find")Integer find, @QueryParam("raw")Boolean raw, @QueryParam("limit")Integer limit);
+    public IngredientObject foodIngredientSearchPhpGet(@QueryParam("find")String find, @QueryParam("raw")Boolean raw, @QueryParam("limit")Integer limit);
 }
