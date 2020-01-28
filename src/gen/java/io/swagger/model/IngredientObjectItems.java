@@ -74,6 +74,18 @@ public class IngredientObjectItems   {
    * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.  
   **/
   private String footnote = null;
+  
+  @Schema(description = "The original search term that found this food item.")
+ /**
+   * The original search term that found this food item.  
+  **/
+  private String searchTerm = null;
+  
+  @Schema(description = "A value that represents how similar the name of this food item is to the original search term.")
+ /**
+   * A value that represents how similar the name of this food item is to the original search term.  
+  **/
+  private String score = null;
  /**
    * Item name as provided by brand owner or as shown on packaging
    * @return name
@@ -256,6 +268,42 @@ public class IngredientObjectItems   {
     return this;
   }
 
+ /**
+   * The original search term that found this food item.
+   * @return searchTerm
+  **/
+  @JsonProperty("search_term")
+  public String getSearchTerm() {
+    return searchTerm;
+  }
+
+  public void setSearchTerm(String searchTerm) {
+    this.searchTerm = searchTerm;
+  }
+
+  public IngredientObjectItems searchTerm(String searchTerm) {
+    this.searchTerm = searchTerm;
+    return this;
+  }
+
+ /**
+   * A value that represents how similar the name of this food item is to the original search term.
+   * @return score
+  **/
+  @JsonProperty("score")
+  public String getScore() {
+    return score;
+  }
+
+  public void setScore(String score) {
+    this.score = score;
+  }
+
+  public IngredientObjectItems score(String score) {
+    this.score = score;
+    return this;
+  }
+
 
   @Override
   public String toString() {
@@ -271,6 +319,8 @@ public class IngredientObjectItems   {
     sb.append("    portions: ").append(toIndentedString(portions)).append("\n");
     sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
     sb.append("    footnote: ").append(toIndentedString(footnote)).append("\n");
+    sb.append("    searchTerm: ").append(toIndentedString(searchTerm)).append("\n");
+    sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("}");
     return sb.toString();
   }
