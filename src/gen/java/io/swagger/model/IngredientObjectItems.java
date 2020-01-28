@@ -69,21 +69,21 @@ public class IngredientObjectItems   {
   **/
   private String commonName = null;
   
-  @Schema(description = "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.")
+  @Schema(description = "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall")
  /**
-   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.  
+   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall  
   **/
   private String footnote = null;
   
-  @Schema(description = "The original search term that found this food item.")
+  @Schema(description = "The original search term that found this food item")
  /**
-   * The original search term that found this food item.  
+   * The original search term that found this food item  
   **/
   private String searchTerm = null;
   
-  @Schema(description = "A value that represents how similar the name of this food item is to the original search term.")
+  @Schema(description = "A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item's name is to the original search term.")
  /**
-   * A value that represents how similar the name of this food item is to the original search term.  
+   * A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item's name is to the original search term.  
   **/
   private String score = null;
  /**
@@ -251,7 +251,7 @@ public class IngredientObjectItems   {
   }
 
  /**
-   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.
+   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall
    * @return footnote
   **/
   @JsonProperty("footnote")
@@ -269,7 +269,7 @@ public class IngredientObjectItems   {
   }
 
  /**
-   * The original search term that found this food item.
+   * The original search term that found this food item
    * @return searchTerm
   **/
   @JsonProperty("search_term")
@@ -287,7 +287,7 @@ public class IngredientObjectItems   {
   }
 
  /**
-   * A value that represents how similar the name of this food item is to the original search term.
+   * A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item&#x27;s name is to the original search term.
    * @return score
   **/
   @JsonProperty("score")
