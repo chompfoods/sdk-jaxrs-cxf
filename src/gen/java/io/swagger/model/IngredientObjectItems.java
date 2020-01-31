@@ -1,10 +1,9 @@
 package io.swagger.model;
 
-import io.swagger.model.BrandedFoodObjectCalorieConversionFactor;
-import io.swagger.model.BrandedFoodObjectComponents;
-import io.swagger.model.BrandedFoodObjectDietLabels;
-import io.swagger.model.BrandedFoodObjectPortions;
+import io.swagger.model.IngredientObjectCalorieConversionFactor;
+import io.swagger.model.IngredientObjectComponents;
 import io.swagger.model.IngredientObjectNutrients;
+import io.swagger.model.IngredientObjectPortions;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -37,11 +36,14 @@ public class IngredientObjectItems   {
   @Schema(description = "")
   private List<String> categories = null;
   
-  @Schema(description = "")
-  private IngredientObjectNutrients nutrients = null;
+  @Schema(description = "An array containing nutrient informatio objects for this food item")
+ /**
+   * An array containing nutrient informatio objects for this food item  
+  **/
+  private List<IngredientObjectNutrients> nutrients = null;
   
   @Schema(description = "")
-  private BrandedFoodObjectCalorieConversionFactor calorieConversionFactor = null;
+  private IngredientObjectCalorieConversionFactor calorieConversionFactor = null;
   
   @Schema(description = "The multiplication factor used to calculate protein from nitrogen")
  /**
@@ -49,38 +51,41 @@ public class IngredientObjectItems   {
   **/
   private BigDecimal proteinConversionFactor = null;
   
-  @Schema(description = "")
-  private BrandedFoodObjectDietLabels dietLabels = null;
-  
   @Schema(description = "An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)")
  /**
    * An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)  
   **/
-  private List<BrandedFoodObjectComponents> components = null;
+  private List<IngredientObjectComponents> components = null;
   
   @Schema(description = "An array of objects containing information on discrete amounts of a food found in this item")
  /**
    * An array of objects containing information on discrete amounts of a food found in this item  
   **/
-  private List<BrandedFoodObjectPortions> portions = null;
+  private List<IngredientObjectPortions> portions = null;
   
-  @Schema(description = "Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")")
+  @Schema(description = "Common name associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")")
  /**
-   * Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")  
+   * Common name associated with this item. These generally clarify what the item is (e.g. when the brand name is \"BRAND's Spicy Enchilada\" the common name may be \"Chicken enchilada\")  
   **/
   private String commonName = null;
   
-  @Schema(description = "A description of this item")
+  @Schema(description = "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall")
  /**
-   * A description of this item  
-  **/
-  private String description = null;
-  
-  @Schema(description = "Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.")
- /**
-   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.  
+   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall  
   **/
   private String footnote = null;
+  
+  @Schema(description = "The original search term that found this food item")
+ /**
+   * The original search term that found this food item  
+  **/
+  private String searchTerm = null;
+  
+  @Schema(description = "A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item's name is to the original search term.")
+ /**
+   * A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item's name is to the original search term.  
+  **/
+  private String score = null;
  /**
    * Item name as provided by brand owner or as shown on packaging
    * @return name
@@ -123,20 +128,25 @@ public class IngredientObjectItems   {
   }
 
  /**
-   * Get nutrients
+   * An array containing nutrient informatio objects for this food item
    * @return nutrients
   **/
   @JsonProperty("nutrients")
-  public IngredientObjectNutrients getNutrients() {
+  public List<IngredientObjectNutrients> getNutrients() {
     return nutrients;
   }
 
-  public void setNutrients(IngredientObjectNutrients nutrients) {
+  public void setNutrients(List<IngredientObjectNutrients> nutrients) {
     this.nutrients = nutrients;
   }
 
-  public IngredientObjectItems nutrients(IngredientObjectNutrients nutrients) {
+  public IngredientObjectItems nutrients(List<IngredientObjectNutrients> nutrients) {
     this.nutrients = nutrients;
+    return this;
+  }
+
+  public IngredientObjectItems addNutrientsItem(IngredientObjectNutrients nutrientsItem) {
+    this.nutrients.add(nutrientsItem);
     return this;
   }
 
@@ -145,15 +155,15 @@ public class IngredientObjectItems   {
    * @return calorieConversionFactor
   **/
   @JsonProperty("calorie_conversion_factor")
-  public BrandedFoodObjectCalorieConversionFactor getCalorieConversionFactor() {
+  public IngredientObjectCalorieConversionFactor getCalorieConversionFactor() {
     return calorieConversionFactor;
   }
 
-  public void setCalorieConversionFactor(BrandedFoodObjectCalorieConversionFactor calorieConversionFactor) {
+  public void setCalorieConversionFactor(IngredientObjectCalorieConversionFactor calorieConversionFactor) {
     this.calorieConversionFactor = calorieConversionFactor;
   }
 
-  public IngredientObjectItems calorieConversionFactor(BrandedFoodObjectCalorieConversionFactor calorieConversionFactor) {
+  public IngredientObjectItems calorieConversionFactor(IngredientObjectCalorieConversionFactor calorieConversionFactor) {
     this.calorieConversionFactor = calorieConversionFactor;
     return this;
   }
@@ -177,42 +187,24 @@ public class IngredientObjectItems   {
   }
 
  /**
-   * Get dietLabels
-   * @return dietLabels
-  **/
-  @JsonProperty("diet_labels")
-  public BrandedFoodObjectDietLabels getDietLabels() {
-    return dietLabels;
-  }
-
-  public void setDietLabels(BrandedFoodObjectDietLabels dietLabels) {
-    this.dietLabels = dietLabels;
-  }
-
-  public IngredientObjectItems dietLabels(BrandedFoodObjectDietLabels dietLabels) {
-    this.dietLabels = dietLabels;
-    return this;
-  }
-
- /**
    * An array of objects containing the constituent parts of a food (e.g. bone is a component of meat)
    * @return components
   **/
   @JsonProperty("components")
-  public List<BrandedFoodObjectComponents> getComponents() {
+  public List<IngredientObjectComponents> getComponents() {
     return components;
   }
 
-  public void setComponents(List<BrandedFoodObjectComponents> components) {
+  public void setComponents(List<IngredientObjectComponents> components) {
     this.components = components;
   }
 
-  public IngredientObjectItems components(List<BrandedFoodObjectComponents> components) {
+  public IngredientObjectItems components(List<IngredientObjectComponents> components) {
     this.components = components;
     return this;
   }
 
-  public IngredientObjectItems addComponentsItem(BrandedFoodObjectComponents componentsItem) {
+  public IngredientObjectItems addComponentsItem(IngredientObjectComponents componentsItem) {
     this.components.add(componentsItem);
     return this;
   }
@@ -222,26 +214,26 @@ public class IngredientObjectItems   {
    * @return portions
   **/
   @JsonProperty("portions")
-  public List<BrandedFoodObjectPortions> getPortions() {
+  public List<IngredientObjectPortions> getPortions() {
     return portions;
   }
 
-  public void setPortions(List<BrandedFoodObjectPortions> portions) {
+  public void setPortions(List<IngredientObjectPortions> portions) {
     this.portions = portions;
   }
 
-  public IngredientObjectItems portions(List<BrandedFoodObjectPortions> portions) {
+  public IngredientObjectItems portions(List<IngredientObjectPortions> portions) {
     this.portions = portions;
     return this;
   }
 
-  public IngredientObjectItems addPortionsItem(BrandedFoodObjectPortions portionsItem) {
+  public IngredientObjectItems addPortionsItem(IngredientObjectPortions portionsItem) {
     this.portions.add(portionsItem);
     return this;
   }
 
  /**
-   * Common names associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)
+   * Common name associated with this item. These generally clarify what the item is (e.g. when the brand name is \&quot;BRAND&#x27;s Spicy Enchilada\&quot; the common name may be \&quot;Chicken enchilada\&quot;)
    * @return commonName
   **/
   @JsonProperty("common_name")
@@ -259,25 +251,7 @@ public class IngredientObjectItems   {
   }
 
  /**
-   * A description of this item
-   * @return description
-  **/
-  @JsonProperty("description")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public IngredientObjectItems description(String description) {
-    this.description = description;
-    return this;
-  }
-
- /**
-   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall.
+   * Comments on any unusual aspects of this item. Examples might include unusual aspects of the food overall
    * @return footnote
   **/
   @JsonProperty("footnote")
@@ -294,6 +268,42 @@ public class IngredientObjectItems   {
     return this;
   }
 
+ /**
+   * The original search term that found this food item
+   * @return searchTerm
+  **/
+  @JsonProperty("search_term")
+  public String getSearchTerm() {
+    return searchTerm;
+  }
+
+  public void setSearchTerm(String searchTerm) {
+    this.searchTerm = searchTerm;
+  }
+
+  public IngredientObjectItems searchTerm(String searchTerm) {
+    this.searchTerm = searchTerm;
+    return this;
+  }
+
+ /**
+   * A value that represents how similar the name of this food item is to the original search term. The lower the value the closer this item&#x27;s name is to the original search term.
+   * @return score
+  **/
+  @JsonProperty("score")
+  public String getScore() {
+    return score;
+  }
+
+  public void setScore(String score) {
+    this.score = score;
+  }
+
+  public IngredientObjectItems score(String score) {
+    this.score = score;
+    return this;
+  }
+
 
   @Override
   public String toString() {
@@ -305,12 +315,12 @@ public class IngredientObjectItems   {
     sb.append("    nutrients: ").append(toIndentedString(nutrients)).append("\n");
     sb.append("    calorieConversionFactor: ").append(toIndentedString(calorieConversionFactor)).append("\n");
     sb.append("    proteinConversionFactor: ").append(toIndentedString(proteinConversionFactor)).append("\n");
-    sb.append("    dietLabels: ").append(toIndentedString(dietLabels)).append("\n");
     sb.append("    components: ").append(toIndentedString(components)).append("\n");
     sb.append("    portions: ").append(toIndentedString(portions)).append("\n");
     sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    footnote: ").append(toIndentedString(footnote)).append("\n");
+    sb.append("    searchTerm: ").append(toIndentedString(searchTerm)).append("\n");
+    sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("}");
     return sb.toString();
   }

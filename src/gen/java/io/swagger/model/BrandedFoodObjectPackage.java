@@ -30,7 +30,7 @@ public class BrandedFoodObjectPackage   {
  /**
    * Package size  
   **/
-  private Integer size = null;
+  private String size = null;
  /**
    * Package quantity
    * @return quantity
@@ -54,15 +54,15 @@ public class BrandedFoodObjectPackage   {
    * @return size
   **/
   @JsonProperty("size")
-  public Integer getSize() {
+  public String getSize() {
     return size;
   }
 
-  public void setSize(Integer size) {
+  public void setSize(String size) {
     this.size = size;
   }
 
-  public BrandedFoodObjectPackage size(Integer size) {
+  public BrandedFoodObjectPackage size(String size) {
     this.size = size;
     return this;
   }

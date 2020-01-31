@@ -24,11 +24,11 @@ public class BrandedFoodObjectServing   {
  /**
    * Serving size  
   **/
-  private Integer size = null;
+  private String size = null;
   
-  @Schema(description = "Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)")
+  @Schema(description = "Measurement unit for each serving (e.g. if measure is 3 tsp, the unit is tsp)")
  /**
-   * Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)  
+   * Measurement unit for each serving (e.g. if measure is 3 tsp, the unit is tsp)  
   **/
   private String measurementUnit = null;
   
@@ -37,32 +37,26 @@ public class BrandedFoodObjectServing   {
    * Serving size description  
   **/
   private String sizeFulltext = null;
-  
-  @Schema(description = "Total servings")
- /**
-   * Total servings  
-  **/
-  private Integer total = null;
  /**
    * Serving size
    * @return size
   **/
   @JsonProperty("size")
-  public Integer getSize() {
+  public String getSize() {
     return size;
   }
 
-  public void setSize(Integer size) {
+  public void setSize(String size) {
     this.size = size;
   }
 
-  public BrandedFoodObjectServing size(Integer size) {
+  public BrandedFoodObjectServing size(String size) {
     this.size = size;
     return this;
   }
 
  /**
-   * Serving measurement unit (e.g. if measure is 3 tsp, the unit is tsp)
+   * Measurement unit for each serving (e.g. if measure is 3 tsp, the unit is tsp)
    * @return measurementUnit
   **/
   @JsonProperty("measurement_unit")
@@ -97,24 +91,6 @@ public class BrandedFoodObjectServing   {
     return this;
   }
 
- /**
-   * Total servings
-   * @return total
-  **/
-  @JsonProperty("total")
-  public Integer getTotal() {
-    return total;
-  }
-
-  public void setTotal(Integer total) {
-    this.total = total;
-  }
-
-  public BrandedFoodObjectServing total(Integer total) {
-    this.total = total;
-    return this;
-  }
-
 
   @Override
   public String toString() {
@@ -124,7 +100,6 @@ public class BrandedFoodObjectServing   {
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    measurementUnit: ").append(toIndentedString(measurementUnit)).append("\n");
     sb.append("    sizeFulltext: ").append(toIndentedString(sizeFulltext)).append("\n");
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("}");
     return sb.toString();
   }

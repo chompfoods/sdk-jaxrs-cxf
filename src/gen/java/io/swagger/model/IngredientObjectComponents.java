@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
   * An object containing information on a specific component of this food item
  **/
 @Schema(description="An object containing information on a specific component of this food item")
-public class BrandedFoodObjectComponents   {
+public class IngredientObjectComponents   {
   
   @Schema(description = "The kind of component, e.g. bone")
  /**
@@ -63,7 +63,7 @@ public class BrandedFoodObjectComponents   {
     this.name = name;
   }
 
-  public BrandedFoodObjectComponents name(String name) {
+  public IngredientObjectComponents name(String name) {
     this.name = name;
     return this;
   }
@@ -81,7 +81,7 @@ public class BrandedFoodObjectComponents   {
     this.pctWeight = pctWeight;
   }
 
-  public BrandedFoodObjectComponents pctWeight(BigDecimal pctWeight) {
+  public IngredientObjectComponents pctWeight(BigDecimal pctWeight) {
     this.pctWeight = pctWeight;
     return this;
   }
@@ -99,7 +99,7 @@ public class BrandedFoodObjectComponents   {
     this.gramWeight = gramWeight;
   }
 
-  public BrandedFoodObjectComponents gramWeight(BigDecimal gramWeight) {
+  public IngredientObjectComponents gramWeight(BigDecimal gramWeight) {
     this.gramWeight = gramWeight;
     return this;
   }
@@ -117,7 +117,7 @@ public class BrandedFoodObjectComponents   {
     this.isRefuse = isRefuse;
   }
 
-  public BrandedFoodObjectComponents isRefuse(Boolean isRefuse) {
+  public IngredientObjectComponents isRefuse(Boolean isRefuse) {
     this.isRefuse = isRefuse;
     return this;
   }
@@ -135,7 +135,7 @@ public class BrandedFoodObjectComponents   {
     this.dataPoints = dataPoints;
   }
 
-  public BrandedFoodObjectComponents dataPoints(Integer dataPoints) {
+  public IngredientObjectComponents dataPoints(Integer dataPoints) {
     this.dataPoints = dataPoints;
     return this;
   }
@@ -144,7 +144,7 @@ public class BrandedFoodObjectComponents   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BrandedFoodObjectComponents {\n");
+    sb.append("class IngredientObjectComponents {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    pctWeight: ").append(toIndentedString(pctWeight)).append("\n");

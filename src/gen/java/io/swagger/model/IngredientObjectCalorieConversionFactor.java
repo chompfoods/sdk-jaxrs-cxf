@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
   * An object containing the multiplication factors to be used when calculating energy from macronutrients for a specific food.
  **/
 @Schema(description="An object containing the multiplication factors to be used when calculating energy from macronutrients for a specific food.")
-public class BrandedFoodObjectCalorieConversionFactor   {
+public class IngredientObjectCalorieConversionFactor   {
   
   @Schema(description = "The multiplication factor for protein")
  /**
@@ -51,7 +51,7 @@ public class BrandedFoodObjectCalorieConversionFactor   {
     this.proteinValue = proteinValue;
   }
 
-  public BrandedFoodObjectCalorieConversionFactor proteinValue(BigDecimal proteinValue) {
+  public IngredientObjectCalorieConversionFactor proteinValue(BigDecimal proteinValue) {
     this.proteinValue = proteinValue;
     return this;
   }
@@ -69,7 +69,7 @@ public class BrandedFoodObjectCalorieConversionFactor   {
     this.fatValue = fatValue;
   }
 
-  public BrandedFoodObjectCalorieConversionFactor fatValue(BigDecimal fatValue) {
+  public IngredientObjectCalorieConversionFactor fatValue(BigDecimal fatValue) {
     this.fatValue = fatValue;
     return this;
   }
@@ -87,7 +87,7 @@ public class BrandedFoodObjectCalorieConversionFactor   {
     this.carbohydrateValue = carbohydrateValue;
   }
 
-  public BrandedFoodObjectCalorieConversionFactor carbohydrateValue(BigDecimal carbohydrateValue) {
+  public IngredientObjectCalorieConversionFactor carbohydrateValue(BigDecimal carbohydrateValue) {
     this.carbohydrateValue = carbohydrateValue;
     return this;
   }
@@ -96,7 +96,7 @@ public class BrandedFoodObjectCalorieConversionFactor   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BrandedFoodObjectCalorieConversionFactor {\n");
+    sb.append("class IngredientObjectCalorieConversionFactor {\n");
     
     sb.append("    proteinValue: ").append(toIndentedString(proteinValue)).append("\n");
     sb.append("    fatValue: ").append(toIndentedString(fatValue)).append("\n");

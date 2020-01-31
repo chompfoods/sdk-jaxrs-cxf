@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
   * An object containing information on a specific food portion found in this item
  **/
 @Schema(description="An object containing information on a specific food portion found in this item")
-public class BrandedFoodObjectPortions   {
+public class IngredientObjectPortions   {
   
   @Schema(description = "The unit used for measure (e.g. if mesure is 3 tsp, the unit is tsp)")
  /**
@@ -69,7 +69,7 @@ public class BrandedFoodObjectPortions   {
     this.measurementUnit = measurementUnit;
   }
 
-  public BrandedFoodObjectPortions measurementUnit(String measurementUnit) {
+  public IngredientObjectPortions measurementUnit(String measurementUnit) {
     this.measurementUnit = measurementUnit;
     return this;
   }
@@ -87,7 +87,7 @@ public class BrandedFoodObjectPortions   {
     this.description = description;
   }
 
-  public BrandedFoodObjectPortions description(String description) {
+  public IngredientObjectPortions description(String description) {
     this.description = description;
     return this;
   }
@@ -105,7 +105,7 @@ public class BrandedFoodObjectPortions   {
     this.modifier = modifier;
   }
 
-  public BrandedFoodObjectPortions modifier(String modifier) {
+  public IngredientObjectPortions modifier(String modifier) {
     this.modifier = modifier;
     return this;
   }
@@ -123,7 +123,7 @@ public class BrandedFoodObjectPortions   {
     this.gramWeight = gramWeight;
   }
 
-  public BrandedFoodObjectPortions gramWeight(BigDecimal gramWeight) {
+  public IngredientObjectPortions gramWeight(BigDecimal gramWeight) {
     this.gramWeight = gramWeight;
     return this;
   }
@@ -141,7 +141,7 @@ public class BrandedFoodObjectPortions   {
     this.dataPoints = dataPoints;
   }
 
-  public BrandedFoodObjectPortions dataPoints(Integer dataPoints) {
+  public IngredientObjectPortions dataPoints(Integer dataPoints) {
     this.dataPoints = dataPoints;
     return this;
   }
@@ -159,7 +159,7 @@ public class BrandedFoodObjectPortions   {
     this.footnote = footnote;
   }
 
-  public BrandedFoodObjectPortions footnote(String footnote) {
+  public IngredientObjectPortions footnote(String footnote) {
     this.footnote = footnote;
     return this;
   }
@@ -168,7 +168,7 @@ public class BrandedFoodObjectPortions   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BrandedFoodObjectPortions {\n");
+    sb.append("class IngredientObjectPortions {\n");
     
     sb.append("    measurementUnit: ").append(toIndentedString(measurementUnit)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
